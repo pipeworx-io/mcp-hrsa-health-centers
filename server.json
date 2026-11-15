@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/hrsa-health-centers",
+  "title": "Hrsa Health Centers",
+  "description": "HRSA health center sites — where federally funded community health centers (FQHCs) and FQHC…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/hrsa-health-centers",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-hrsa-health-centers",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/hrsa-health-centers/mcp"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-hrsa-health-centers",
+  "version": "0.1.0",
+  "description": "HRSA health center sites — where federally funded community health centers (FQHCs) and FQHC look-alikes operate, with address, phone, hours and distance. Source: HRSA Data Warehouse, Health Center Program site data. US federal data, public domain.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-hrsa-health-centers": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "hrsa-health-centers"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-hrsa-health-centers.git"
+  },
+  "mcpName": "io.github.pipeworx-io/hrsa-health-centers",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "hrsa-health-centers",
+    "gatewaySlug": "hrsa-health-centers",
+    "sourceHash": "v1-ab48eee46cd8d91ef048581de64e2aa45b2f58b225c5055f7c3c4793119656ef",
+    "sourceCommit": "72e74cb110c2f0aa8da008f3a002d5a3c167142d"
+  }
+}

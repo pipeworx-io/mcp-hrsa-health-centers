@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hrsa_health_center_sites",
+    "description": "Find federally funded community health center sites (FQHCs and FQHC look-alikes) from HRSA data: address, phone, website, weekly hours, the operating health center, county, NPI and Medicare billing number. Search by site or health center name, state, city, ZIP, county, or by distance from a ZIP, a city or coordinates (\"FQHCs within 10 miles of 33101\", \"community health centers in Miami\", \"where is Riverside Community Health Center in Florida\"). Results sort by distance when a center point is given. If no site matches, the answer says so plainly and lists near-name sites in the same state; a clinic missing here may simply not be an HRSA health center (free clinics, rural health clinics and hospital outpatient clinics are not in this list). Every answer carries the HRSA data date. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Words in the site name or the health center (organization) name, e.g. \"Riverside\" or \"Family Health Center\". All words must match."
+        },
+        "state": {
+          "type": "string",
+          "description": "Two-letter code or full name, e.g. \"FL\" or \"Florida\". Territories (PR, GU, VI, AS, MP) are included."
+        },
+        "city": {
+          "type": "string",
+          "description": "Site city, e.g. \"Miami\". Matches exactly, ignoring case."
+        },
+        "zip": {
+          "type": "string",
+          "description": "Site ZIP: 5 digits, or a 3-digit prefix for a wider area."
+        },
+        "county": {
+          "type": "string",
+          "description": "County name, e.g. \"Duval\" or \"Miami-Dade County\"."
+        },
+        "near_zip": {
+          "type": "string",
+          "description": "Center the search on this 5-digit ZIP and sort by distance."
+        },
+        "near_city": {
+          "type": "string",
+          "description": "Center the search on this city (needs state). Alternative to near_zip."
+        },
+        "near_lat": {
+          "type": "number",
+          "description": "Center latitude (use with near_lon)."
+        },
+        "near_lon": {
+          "type": "number",
+          "description": "Center longitude (use with near_lat)."
+        },
+        "radius_miles": {
+          "type": "number",
+          "description": "Search radius around the center, default 25, max 500."
+        },
+        "program": {
+          "type": "string",
+          "enum": [
+            "fqhc",
+            "look-alike",
+            "any"
+          ],
+          "description": "FQHC grantee sites, look-alike sites, or both (default any)."
+        },
+        "include_school_sites": {
+          "type": "boolean",
+          "description": "School-based health center sites (about a quarter of all sites) are left out of searches without a name filter, and the answer says how many were left out. Set true to include them."
+        },
+        "include_administrative": {
+          "type": "boolean",
+          "description": "Include sites that are administrative offices only, with no patient services (default false)."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Rows to return, default 25, max 200."
+        }
+      }
+    }
+  }
+]
